@@ -27,13 +27,13 @@ module "dcos-elb-public-agents" {
 
 | Name | Description | Type | Default | Required |
 |------|-------------|:----:|:-----:|:-----:|
-| additional_listener | Specify a list of listeners. That are set in addition to the default listeners. | string | `<list>` | no |
-| cluster_name | Specify the cluster name all resources get named and tagged with | string | - | yes |
-| https_acm_cert_arn | Specify an ACM certifacte to be used. | string | `` | no |
+| additional_listener | List of additional listeners. | string | `<list>` | no |
+| cluster_name | Cluster name all resources get named and tagged with | string | - | yes |
+| https_acm_cert_arn | ACM certifacte to be used. | string | `` | no |
 | instances | List of public agent instance IDs | list | - | yes |
 | security_groups | Security Group IDs to be uses. | list | `<list>` | no |
 | subnet_ids | Subnets to spawn the instances in. The module tries to distribute the instances | list | - | yes |
-| tags | Add special tags to the resources created by this module | map | `<map>` | no |
+| tags | Custom tags added to the resources created by this module | map | `<map>` | no |
 
 ## Outputs
 
