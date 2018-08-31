@@ -36,5 +36,5 @@ variable "additional_listener" {
 
 variable "internal" {
   description = "Internal Facing Scheme for elb"
-  default = ""
+  default     = ""
 }
