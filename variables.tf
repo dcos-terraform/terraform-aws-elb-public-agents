@@ -33,3 +33,8 @@ variable "additional_listener" {
   description = "List of additional listeners."
   default     = []
 }
+
+variable "internal" {
+  description = "Internal Facing Scheme for elb"
+  default     = ""
+}
