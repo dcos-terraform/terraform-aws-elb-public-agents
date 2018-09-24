@@ -45,7 +45,7 @@ module "public-agents" {
   }
 
   https_acm_cert_arn = "${var.https_acm_cert_arn}"
-  elb_name_format    = "%s-public-agents"
+  elb_name_format    = "public-agents-%s"
 
   additional_listener = ["${var.additional_listener}"]
   instances           = ["${var.instances}"]
