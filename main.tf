@@ -28,7 +28,7 @@ provider "aws" {}
 
 module "public-agents" {
   source  = "dcos-terraform/elb/aws"
-  version = "~> 0.0"
+  version = "~> 0.1"
 
   providers = {
     aws = "aws"
