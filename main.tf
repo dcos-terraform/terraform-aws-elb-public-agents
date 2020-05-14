@@ -24,19 +24,20 @@
  *```
  */
 
-provider "aws" {}
+provider "aws" {
+  version = ">= 2.58"
+}
 
 module "public-agents" {
   source  = "dcos-terraform/elb/aws"
-  version = "~> 0.1.0"
 
   providers = {
-    aws = "aws"
+    aws = aws
   }
 
-  cluster_name = "${var.cluster_name}"
+  cluster_name = var.cluster_name
 
-  health_check {
+  health_check = {
     healthy_threshold   = 2
     unhealthy_threshold = 2
     timeout             = 2
@@ -44,14 +45,15 @@ module "public-agents" {
     interval            = 5
   }
 
-  https_acm_cert_arn = "${var.https_acm_cert_arn}"
+  https_acm_cert_arn = var.https_acm_cert_arn
   elb_name_format    = "ext-%s"
 
-  additional_listener = ["${var.additional_listener}"]
-  instances           = ["${var.instances}"]
-  security_groups     = ["${var.security_groups}"]
-  subnet_ids          = ["${var.subnet_ids}"]
-  internal            = "${var.internal}"
+  additional_listener = var.additional_listener
+  instances           = var.instances
+  security_groups     = var.security_groups
+  subnet_ids          = var.subnet_ids
+  internal            = var.internal
 
-  tags = "${var.tags}"
+  tags = var.tags
 }
+
