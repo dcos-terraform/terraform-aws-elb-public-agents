@@ -29,7 +29,7 @@ provider "aws" {
 }
 
 module "public-agents" {
-  source  = "dcos-terraform/elb/aws"
+  source  = "../terraform-aws-elb"
 
   providers = {
     aws = aws
