@@ -10,7 +10,7 @@
  *```hcl
  * module "dcos-elb-public-agents" {
  *   source  = "terraform-dcos/elb-public-agents/aws"
- *   version = "~> 0.1.0"
+ *   version = "~> 0.3.0"
  *
  *   cluster_name = "production"
  *
@@ -29,7 +29,8 @@ provider "aws" {
 }
 
 module "public-agents" {
-  source  = "../terraform-aws-elb"
+  source  = "dcos-terraform/elb/aws"
+  version = "~> 0.3.0"
 
   providers = {
     aws = aws
